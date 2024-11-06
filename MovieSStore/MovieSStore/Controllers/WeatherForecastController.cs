@@ -4,7 +4,7 @@ namespace MovieSStore.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class MovieController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
@@ -13,7 +13,7 @@ namespace MovieSStore.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public MovieController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
         }
