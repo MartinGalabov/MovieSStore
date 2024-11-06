@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace MovieSStore.Models.Models
 {
-    internal class Class1
+    public class Movie
     {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Year { get; set; }     
     }
 }

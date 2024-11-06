@@ -11,11 +11,13 @@ namespace MovieSStore.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<MovieController> _logger;
+        private readonly IMovieRepository<MovieController> _moviereRository;
 
-        public MovieController(ILogger<WeatherForecastController> logger)
+        public MovieController(ILogger<MovieController> logger)
         {
             _logger = logger;
+            _moviereRository = movieRepository
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
