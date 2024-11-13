@@ -1,4 +1,4 @@
-﻿using MovieSStore.Models.Models;
+﻿using MovieSStore.Models.DTO;
 
 namespace MovieSStore.DataLayer.DataBase
 {

@@ -1,8 +1,8 @@
-﻿using MovieStoreB.DataLayer.DataBase;
-using MovieStoreB.DataLayer.Interfaces;
-using MovieStoreB.Models.Models;
+﻿using MovieSStore.DataLayer.DataBase;
+using MovieSStore.DataLayer.Interfaces;
+using MovieSStore.Models.DTO;
 
-namespace MovieStoreB.DataLayer.Repositories
+namespace MovieSStore.DataLayer.Repositories
 {
     public class MovieRepository : IMovieRepository
     {

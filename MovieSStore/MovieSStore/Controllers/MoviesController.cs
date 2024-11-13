@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieSStore.DataLayer.Interfaces;
-using MovieSStore.Models.Models;
+using MovieSStore.Models.DTO;
 
 namespace MovieStoreB.Controllers
 {
