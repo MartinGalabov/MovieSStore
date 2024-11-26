@@ -1,29 +1,37 @@
 ﻿using MovieSStore.DataLayer.DataBase;
-using MovieSStore.DataLayer.Interfaces;
 using MovieSStore.Models.DTO;
+using MovieSStore.DataLayer.Interfaces;
 
 namespace MovieSStore.DataLayer.Repositories
 {
-    internal class MovieRepository : IMovieRepository
+        internal class MovieRepository : IMovieRepository
     {
         public List<Movie> GetMovies()
         {
             return StaticData.Movies;
         }
+
         public void AddMovie(Movie movie)
         {
-            var movie = 
-            throw new NotImplementedException();
+            StaticData.Movies.Add(movie);
         }
-
         public void DeleteMovie(int id)
         {
-            if()
-            throw new NotImplementedException();
+            if (id <= 0) return;
+
+            var movie = GetMoviesById(id);
+
+            if (movie != null)
+            {
+                StaticData.Movies.Remove(movie);
+            }
         }
-        public Movie? GetMovieById(int id)
+        public Movie? GetMoviesById(int id)
         {
-            return StaticData.Movies.First(x => x.Id == id);
+            if (id <= 0) return null;
+
+            return StaticData.Movies
+                .FirstOrDefault(x => x.Id == id);
         }
     }
 }

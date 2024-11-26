@@ -1,3 +1,5 @@
+using MovieSStore.BizLayer;
+using MovieSStore.DataLayer;
 
 namespace MovieSStore
 {
@@ -10,7 +12,7 @@ namespace MovieSStore
             // Add services to the container.
 
             builder.Services
-                .AddDataDependencies();
+                .AddDataDependencies()
                 .AddBusinessDependencies();
 
             builder.Services.AddControllers();
@@ -30,7 +32,6 @@ namespace MovieSStore
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
