@@ -1,3 +1,4 @@
+using Mapster;
 using MovieSStore.BizLayer;
 using MovieSStore.DataLayer;
 
@@ -15,8 +16,9 @@ namespace MovieSStore
                 .AddDataDependencies()
                 .AddBusinessDependencies();
 
+            builder.Services.AddMapster();
+
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

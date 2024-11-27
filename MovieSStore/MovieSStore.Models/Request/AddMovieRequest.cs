@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieSStore.Models.DTO
+namespace MovieSStore.Models.Request
 {
-    public class Actor
+    internal class AddMovieRequest
     {
-        public int Id { get; set; }
 
-        public string Name { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using MapsterMapper;
 using Microsoft.AspNetCore.Mvc;
 using MovieSStore.BizLayer.Interfaces;
 using MovieSStore.Models.DTO;
@@ -9,6 +10,8 @@ namespace MovieSStore.Controllers
     public class MoviesController : ControllerBase
     {
         private readonly IMovieService _movieService;
+        private readonly IMapper _mapper;
+        private readonly ILogger<MoviesController> _logger;
 
         public MoviesController(IMovieService movieService)
         {
@@ -35,8 +38,10 @@ namespace MovieSStore.Controllers
         }
 
         [HttpPost("AddMovie")]
-        public void AddMovie([FromBody] Movie movie)
+        public void AddMovie([FromBody] AddMovieRequest movieRequest)
         {
+            var movie = _mapper.Map<Movie>(movieRequest);
+
             _movieService.AddMovie(movie);
         }
 
