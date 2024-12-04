@@ -1,6 +1,8 @@
 using Mapster;
 using MovieSStore.BizLayer;
 using MovieSStore.DataLayer;
+using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
 
 namespace MovieSStore
 {
@@ -9,6 +11,11 @@ namespace MovieSStore
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
+                .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+                .CreateLogger();
 
             // Add services to the container.
 

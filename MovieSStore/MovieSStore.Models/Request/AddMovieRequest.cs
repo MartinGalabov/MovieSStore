@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MovieSStore.Models.Request
+﻿namespace MovieSStore.Models.Request
 {
-    internal class AddMovieRequest
+    public class AddMovieRequest
     {
+        public string Title { get; set; }
 
+        public int Year { get; set; }
     }
 }
