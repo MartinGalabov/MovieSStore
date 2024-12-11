@@ -4,7 +4,7 @@ using MovieSStore.DataLayer.Interfaces;
 
 namespace MovieSStore.DataLayer.Repositories
 {
-        internal class MovieRepository : IMovieRepository
+        internal class MovieStaticRepository : IMovieRepository
     {
         public List<Movie> GetMovies()
         {

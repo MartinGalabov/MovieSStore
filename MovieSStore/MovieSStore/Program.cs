@@ -1,8 +1,11 @@
+using FluentValidation.AspNetCore;
+using FluentValidation;
 using Mapster;
 using MovieSStore.BizLayer;
 using MovieSStore.DataLayer;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
+using MovieSStore.Controllers;
 
 namespace MovieSStore
 {
@@ -24,6 +27,9 @@ namespace MovieSStore
                 .AddBusinessDependencies();
 
             builder.Services.AddMapster();
+
+            builder.Services.AddValidatorsFromAssemblyContaining<TestRequest>();
+            builder.Services.AddFluentValidationAutoValidation();
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();

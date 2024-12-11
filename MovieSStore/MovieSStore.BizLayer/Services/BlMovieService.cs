@@ -1,0 +1,41 @@
+﻿using MovieSStore.BizLayer.Interfaces;
+using MovieSStore.DataLayer.Interfaces;
+using MovieSStore.Models.Responses;
+
+namespace MovieSStore.BizLayer.Services
+{
+    internal class BlMovieService : IBlMovieService
+    {
+        private readonly IMovieService _movieService;
+        private readonly IActorRepository _actorRepository;
+
+        public BlMovieService(IMovieService movieService, IActorRepository actorRepository)
+        {
+            _movieService = movieService;
+            _actorRepository = actorRepository;
+        }
+
+        public List<FullMovieDetails> GetAllMovieDetails()
+        {
+            var result = new List<FullMovieDetails>();
+
+            var movies = _movieService.GetMovies();
+            //За всеки филм взимате автор по Id и го добавяте в result
+
+            foreach (var movie in movies)
+            {
+                var movieDetails = new FullMovieDetails();
+                movieDetails.Title = movie.Title;
+                movieDetails.Year = movie.Year;
+                movieDetails.Id = movie.Id;
+
+                foreach (var actorId in movie.Actors)
+                {
+                    var actor = _actorRepository.GetById(actorId);
+                }
+
+            }
+            return result;
+        }
+    }
+}
