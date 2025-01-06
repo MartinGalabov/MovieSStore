@@ -6,6 +6,7 @@ using MovieSStore.DataLayer;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using MovieSStore.Controllers;
+using MovieSStore.ServiceExtensions;
 
 namespace MovieSStore
 {
@@ -23,8 +24,10 @@ namespace MovieSStore
             // Add services to the container.
 
             builder.Services
+                .AddConfigurations(builder.Configuration)
                 .AddDataDependencies()
                 .AddBusinessDependencies();
+
 
             builder.Services.AddMapster();
 

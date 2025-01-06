@@ -20,24 +20,30 @@ namespace MovieSStore.BizLayer.Services
 
         public void AddMovie(Movie movie)
         {
-            if (movie == null) return;
+            if (movie == null || movie.Actors == null) return;
+
+            foreach (var actor in movie.Actors)
+            {
+                if (!Guid.TryParse(actor, out _)) return;
+            }
 
             _movieRepository.AddMovie(movie);
         }
 
-        public void DeleteMovie(int id)
+        public void DeleteMovie(string id)
         {
-            if (id <= 0) return;
+            if (!string.IsNullOrEmpty(id)) return;
 
             _movieRepository.DeleteMovie(id);
         }
 
-        public Movie? GetMoviesById(int id)
+        public Movie? GetMoviesById(string id)
         {
-            if (id <= 0)
+            if (!string.IsNullOrEmpty(id))
             {
                 return null;
             }
+
             return _movieRepository.GetMoviesById(id);
         }
     }

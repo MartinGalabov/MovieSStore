@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MovieSStore.DataLayer.Interfaces;
 using MovieSStore.DataLayer.Repositories;
+using MovieSStore.DataLayer.Repositories.MongoRepositories;
 
 namespace MovieSStore.BizLayer
 {
@@ -10,12 +11,10 @@ namespace MovieSStore.BizLayer
 
             AddDataDependencies(this IServiceCollection services)
         {
-
-            services.AddSingleton<IMovieRepository, MovieStaticRepository>();
-            services.AddSingleton<IActorRepository, ActorStaticRepository>();
+            services.AddSingleton<IMovieRepository, MoviesRepository>();
+            //services.AddSingleton<IActorRepository, ActorStaticRepository>();
 
             return services;
         }
-
     }
 }

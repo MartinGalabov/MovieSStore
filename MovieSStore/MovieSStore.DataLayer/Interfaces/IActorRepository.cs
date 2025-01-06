@@ -4,6 +4,6 @@ namespace MovieSStore.DataLayer.Interfaces
 {
     public interface IActorRepository
     {
-        Actor? GetById(int id);
+        Actor? GetById(string id);
     }
 }
