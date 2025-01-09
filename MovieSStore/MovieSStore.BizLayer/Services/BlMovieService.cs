@@ -33,6 +33,8 @@ namespace MovieSStore.BizLayer.Services
                     var actor = _actorRepository.GetById(actorId);
                 }
 
+                result.Add(movieDetails);
+
             }
             return result;
         }

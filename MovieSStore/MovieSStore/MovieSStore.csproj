@@ -11,15 +11,16 @@
 	<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
     <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="MongoRepository" Version="1.6.11" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MovieSStore.BizLayer\MovieSStore.BizLayer.csproj" />
     <ProjectReference Include="..\MovieSStore.DataLayer\MovieSStore.DataLayer.csproj" />
     <ProjectReference Include="..\MovieSStore.Models\MovieSStore.Models.csproj" />
+    <ProjectReference Include="..\MovieSStore.Tests\MovieSStore.Tests.csproj" />
   </ItemGroup>
 
 </Project>

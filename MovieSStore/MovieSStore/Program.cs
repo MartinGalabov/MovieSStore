@@ -6,6 +6,7 @@ using MovieSStore.DataLayer;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using MovieSStore.Controllers;
+using MovieStoreB.HealthChecks;
 using MovieSStore.ServiceExtensions;
 
 namespace MovieSStore
@@ -38,6 +39,10 @@ namespace MovieSStore
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //builder.Services.AddHealthChecks();
+
+            builder.Services.AddHealthChecks().AddCheck<SampleHealthCheck>("Sample");
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -46,6 +51,8 @@ namespace MovieSStore
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.MapHealthChecks("/healthz");
 
             app.UseHttpsRedirection();
 
