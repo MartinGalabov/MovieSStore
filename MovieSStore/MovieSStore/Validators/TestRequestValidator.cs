@@ -2,7 +2,7 @@ using FluentValidation;
 using MovieSStore.Models.DTO;
 using MovieSStore.Controllers;
 
-namespace MovieStoreB.Validators
+namespace MovieSStore.Validators
 {
     public class TestRequestValidator : AbstractValidator<Movie>
     {

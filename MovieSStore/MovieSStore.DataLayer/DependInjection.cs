@@ -12,7 +12,7 @@ namespace MovieSStore.BizLayer
             AddDataDependencies(this IServiceCollection services)
         {
             services.AddSingleton<IMovieRepository, MoviesRepository>();
-            //services.AddSingleton<IActorRepository, ActorStaticRepository>();
+            services.AddSingleton<IActorRepository, ActorStaticRepository>();
 
             return services;
         }

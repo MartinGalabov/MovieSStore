@@ -2,7 +2,7 @@
 using MovieSStore.Models.DTO;
 using MovieSStore.Models.Request;
 
-namespace MovieStoreB.MapsterConfig
+namespace MovieSStore.MapsterConfig
 {
     public class MapsterConfiguration
     {

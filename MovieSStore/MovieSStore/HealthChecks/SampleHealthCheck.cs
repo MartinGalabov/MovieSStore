@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace MovieStoreB.HealthChecks
+namespace MovieSStore.HealthChecks
 {
     public class SampleHealthCheck : IHealthCheck
     {
